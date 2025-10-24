@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CityPermit AI - Investor Presentation</title>
+  <style>
+    :root {
+      --primary: #2C5F2D;
+      --secondary: #97BC62;
+      --accent: #FF6B35;
+      --dark: #2D3142;
+      --light: #F4F4F9;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--light);
+      color: var(--dark);
+      line-height: 1.6;
+    }
+    .container { max-width: 1200px; margin: 0 auto; padding: 2rem; }
+    header {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+      padding: 3rem 2rem;
+      text-align: center;
+      border-radius: 0 0 20px 20px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+    h1 { font-size: 3.5rem; margin-bottom: 1rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.2); }
+    .tagline { font-size: 1.5rem; font-weight: 300; margin-bottom: 2rem; }
+    .highlight { color: var(--accent); font-weight: bold; }
+    .stats-container {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      margin: 3rem 0;
+    }
+    .stat-box {
+      background: white;
+      border-radius: 10px;
+      padding: 1.5rem;
+      margin: 1rem;
+      flex: 1;
+      min-width: 200px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+    .stat-box:hover { transform: translateY(-5px); }
+    .stat-number {
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+    }
+    .stat-label { font-size: 1rem; color: var(--dark); }
+    .section {
+      margin: 4rem 0;
+      padding: 2rem;
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    }
+    .section-title {
+      font-size: 2rem;
+      color: var(--primary);
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--accent);
+    }
+    .problem-solution { display: flex; flex-wrap: wrap; gap: 2rem; }
+    .problem, .solution { flex: 1; min-width: 300px; padding: 1.5rem; border-radius: 10px; }
+    .problem { background: #FFE8E8; border-left: 5px solid #E74C3C; }
+    .solution { background: #E8F4FF; border-left: 5px solid var(--primary); }
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    .feature-card {
+      background: white;
+      border-radius: 10px;
+      padding: 1.5rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      border-top: 4px solid var(--accent);
+      transition: transform 0.3s ease;
+    }
+    .feature-card:hover { transform: translateY(-5px); }
+    .feature-icon { font-size: 2rem; color: var(--primary); margin-bottom: 1rem; }
+    .feature-title { font-size: 1.2rem; font-weight: bold; margin-bottom: 0.5rem; color: var(--dark); }
+    .market-opportunity {
+      background: linear-gradient(135deg, var(--primary), #1a3d1b);
+      color: white;
+      padding: 3rem;
+      border-radius: 15px;
+      margin: 3rem 0;
+    }
+    .market-title { font-size: 2rem; margin-bottom: 1.5rem; text-align: center; }
+    .market-stats { display: flex; justify-content: space-around; flex-wrap: wrap; }
+    .market-stat { text-align: center; margin: 1rem; }
+    .market-number { font-size: 2.5rem; font-weight: bold; margin-bottom: 0.5rem; }
+    .cta-section {
+      text-align: center;
+      padding: 4rem 2rem;
+      background: var(--dark);
+      color: white;
+      border-radius: 15px;
+      margin-top: 3rem;
+    }
+    .cta-title { font-size: 2.5rem; margin-bottom: 1.5rem; }
+    .cta-button {
+      display: inline-block;
+      background: var(--accent);
+      color: white;
+      padding: 1rem 2.5rem;
+      border-radius: 50px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      text-decoration: none;
+      margin-top: 1.5rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+    .cta-button:hover {
+      background: #ff7f4d;
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+    }
+    footer { text-align: center; padding: 2rem; color: var(--dark); font-size: 0.9rem; }
+    @media (max-width: 768px) {
+      h1 { font-size: 2.5rem; }
+      .tagline { font-size: 1.2rem; }
+      .stat-box { min-width: 150px; }
+      .section { padding: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🏗️ CityPermit AI</h1>
+    <p class="tagline">Eliminating <span class="highlight">$12 Billion</span> in Permitting Delays Through Intelligent Automation</p>
+  </header>
+
+  <div class="container">
+    <div class="stats-container">
+      <div class="stat-box">
+        <div class="stat-number">5.2M</div>
+        <div class="stat-label">Annual Permitted Projects</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-number">$12B</div>
+        <div class="stat-label">Lost to Delays Yearly</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-number">$8.5B</div>
+        <div class="stat-label">Addressable Market</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-number">70%</div>
+        <div class="stat-label">Time Reduction</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">The Problem & Our Solution</h2>
+      <div class="problem-solution">
+        <div class="problem">
+          <h3>The Problem</h3>
+          <p>Small businesses and homeowners face overwhelming complexity:</p>
+          <ul>
+            <li>$12B annually in delays and abandoned projects</li>
+            <li>8-16 weeks average processing time</li>
+            <li>40-60% rejection rates on initial applications</li>
+            <li>$1,000-$5,000 professional expeditor fees</li>
+            <li>3,000+ unique municipal jurisdictions</li>
+          </ul>
+        </div>
+        <div class="solution">
+          <h3>Our Solution</h3>
+          <p>AI-powered assistant with specialized agents:</p>
+          <ul>
+            <li>Requirement Analyzer: Generates permit checklists</li>
+            <li>Form Pre-Filler: Auto-completes applications</li>
+            <li>Status Tracker: Proactive deadline monitoring</li>
+            <li>Compliance Checker: Validates plans before submission</li>
+            <li>Plain-language guidance for 3,000+ jurisdictions</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">Key Features</h2>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">🤖</div>
+          <div class="feature-title">AI-Powered Guidance</div>
+          <p>Translates complex municipal code into clear, actionable steps with conversational assistance.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📝</div>
+          <div class="feature-title">Smart Form Completion</div>
+          <p>Natural language interviews replace tedious form-filling with automated data extraction.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">✅</div>
+          <div class="feature-title">Compliance Validation</div>
+          <p>Validates plans against zoning and building codes before submission to prevent rejections.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🔔</div>
+          <div class="feature-title">Proactive Tracking</div>
+          <p>Monitors status across jurisdictions with automatic reminders for deadlines and actions.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🌐</div>
+          <div class="feature-title">3,000+ Jurisdictions</div>
+          <p>Comprehensive coverage of cities and counties across the United States with updated codes.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📊</div>
+          <div class="feature-title">Multi-Project Dashboard</div>
+          <p>Track multiple permits simultaneously with team collaboration and document management.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="market-opportunity">
+      <h2 class="market-title">Massive Market Opportunity</h2>
+      <div class="market-stats">
+        <div class="market-stat">
+          <div class="market-number">5.2M</div>
+          <div>Annual Projects</div>
+        </div>
+        <div class="market-stat">
+          <div class="market-number">$42B</div>
+          <div>Project Value</div>
+        </div>
+        <div class="market-stat">
+          <div class="market-number">750K+</div>
+          <div>Contractors</div>
+        </div>
+        <div class="market-stat">
+          <div class="market-number">$25M</div>
+          <div>ARR Target (36 mo)</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">Business Model</h2>
+      <div class="problem-solution">
+        <div class="solution">
+          <h3>Freemium Access</h3>
+          <p>Free requirement checklists and basic tracking; Premium tiers ($99-$299/project) for form completion and compliance checking.</p>
+        </div>
+        <div class="solution">
+          <h3>B2B Partnerships</h3>
+          <p>$49-$99/month contractor subscriptions, white-label for architects, API licensing for real estate platforms.</p>
+        </div>
+        <div class="solution">
+          <h3>Municipal SaaS</h3>
+          <p>License to cities for improved applicant experience and reduced processing burden.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="cta-section">
+      <h2 class="cta-title">Join Us in Transforming Municipal Permitting</h2>
+      <p>Seeking $6M Series A to scale to 3,000 jurisdictions and serve 100K+ projects by Month 24.</p>
+      <a href="#" class="cta-button">Schedule a Demo</a>
+    </div>
+  </div>
+
+  <footer>
+    <p><strong>CityPermit AI</strong> – Making Municipal Bureaucracy Navigable for Everyone</p>
+    <p><strong>Market Data & Research:</strong> U.S. Census Bureau Construction Data, National Association of Home Builders (NAHB), American Institute of Architects (AIA), U.S. Small Business Administration (SBA), Kauffman Foundation, International Code Council (ICC), Urban Institute, Government Accountability Office (GAO), BuildZoom Economic Research, Gartner GovTech Reports, Deloitte Center for Government Insights, Associated General Contractors of America (AGC), McKinsey Construction Reports, National Institute of Building Sciences (NIBS), American Planning Association (APA)</p>
+  </footer>
+</body>
+</html>
